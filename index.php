@@ -13,6 +13,6 @@
         </header>
 
         <nav>
-            
+             <a href="tambah_barang.php">Tambah Barang</a>
         </nav>
     </body>
