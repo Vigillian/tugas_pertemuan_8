@@ -30,4 +30,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $newName = time() . "_" . $cover['name'];
     $uploadPath = "../uploads/" . $newName;
     move_uploaded_file($cover['tmp_name'], $uploadPath);
-$repo->update($id,
+  $repo->update($id, [ 
+        "judul" => $judul,
+        "penulis" => $penulis,
+        "tahun_terbit" => $tahun,
+        "kategori" => $kategori,
+        "cover" => $coverName,
+        "status" => $status
+    ]);
