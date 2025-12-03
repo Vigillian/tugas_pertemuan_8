@@ -19,3 +19,17 @@ if (isset($_GET['confirm']) && $_GET['confirm'] === 'yes') {
     header("Location: index.php");
     exit;
 }
+?>
+<html>
+<head>
+    <title>Konfirmasi Hapus</title>
+</head>
+<body>
+<h1>Apakah kamu yakin ingin menghapus buku ini?</h1>
+<p><strong><?= $data['judul']; ?></strong></p>
+<p>Penulis: <?= $data['penulis']; ?></p>
+<br>
+<a href="hapus.php?id=<?= $id ?>&confirm=yes">Ya, hapus</a> |
+<a href="index.php">Batal</a>
+</body>
+</html>
