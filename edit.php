@@ -38,3 +38,6 @@ $newName = time() . "_" . $cover['name'];
         "cover" => $coverName,
         "status" => $status
     ]);
+ header("Location: index.php");
+    exit;
+}
