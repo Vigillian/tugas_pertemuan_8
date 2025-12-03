@@ -30,3 +30,4 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
 $newName = time() . "_" . $cover['name'];
     $uploadPath = "../uploads/" . $newName;
     move_uploaded_file($cover['tmp_name'], $uploadPath);
+$repo->update($id,
