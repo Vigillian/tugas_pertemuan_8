@@ -61,3 +61,17 @@ $newName = time() . "_" . $cover['name'];
     <label>Kategori:</label><br>
     <input type="text" name="kategori" value="<?= $data['kategori'] ?>" required><br><br>
     <label>Status:</label><br>
+<select name="status" required>
+        <option value="tersedia" <?= $data['status'] == 'tersedia' ? 'selected' : '' ?>>Tersedia</option>
+        <option value="habis" <?= $data['status'] == 'habis' ? 'selected' : '' ?>>Habis</option>
+    </select>
+    <br><br>
+    <label>Cover Buku (opsional):</label><br>
+    <img src="../uploads/<?= $data['cover'] ?>" width="120"><br><br>
+    <input type="file" name="cover" accept="image/*"><br><br>
+    <button type="submit">Update</button>
+</form>
+<br>
+<a href="index.php">← Kembali</a>
+</body>
+</html>
