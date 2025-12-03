@@ -1,4 +1,5 @@
 <?php
+require_once __DIR__ . '/../config/database.php';
 require_once __DIR__ . '/../src/BookRepository.php';
 $repo = new BookRepository($pdo);
 if (!isset($_GET['id'])) {
