@@ -6,3 +6,8 @@ class BookRepository
     {
         $this->db = $pdo;
     }
+public function getAll(): array
+    {
+        $stmt = $this->db->query("SELECT * FROM buku ORDER BY id DESC");
+        return $stmt->fetchAll(PDO::FETCH_ASSOC);
+    }
