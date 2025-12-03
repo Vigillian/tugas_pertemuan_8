@@ -43,3 +43,21 @@ $newName = time() . "_" . $cover['name'];
  header("Location: index.php");
     exit;
 }
+?>
+<html>
+<head>
+    <title>Edit Buku</title>
+</head>
+<body>
+
+<h1>Edit Buku</h1>
+<form action="" method="POST" enctype="multipart/form-data">
+    <label>Judul:</label><br>
+    <input type="text" name="judul" value="<?= $data['judul'] ?>" required><br><br>
+    <label>Penulis:</label><br>
+    <input type="text" name="penulis" value="<?= $data['penulis'] ?>" required><br><br>
+    <label>Tahun Terbit:</label><br>
+    <input type="number" name="tahun_terbit" value="<?= $data['tahun_terbit'] ?>" required><br><br>
+    <label>Kategori:</label><br>
+    <input type="text" name="kategori" value="<?= $data['kategori'] ?>" required><br><br>
+    <label>Status:</label><br>
