@@ -16,3 +16,10 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $kategori = $_POST['kategori'];
     $status = $_POST['status'];
     $coverName = $data['cover']; 
+ if (!empty($_FILES['cover']['name'])) {
+        $cover = $_FILES['cover'];
+        $allowedTypes = ['image/jpeg', 'image/png'];
+        $maxSize = 2 * 1024 * 1024;
+        if (!in_array($cover['type'], $allowedTypes)) {
+        echo "Tipe file tidak valid.";
+        exit;
