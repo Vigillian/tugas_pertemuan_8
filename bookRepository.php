@@ -33,3 +33,20 @@ public function getById(int $id): ?array
             $data['status']
         ]);
     }
+public function update(int $id, array $data): bool
+    {
+        $stmt = $this->db->prepare("
+            UPDATE buku 
+            SET judul = ?, penulis = ?, tahun_terbit = ?, kategori = ?, cover = ?, status = ?
+            WHERE id = ?
+        ");
+        return $stmt->execute([
+            $data['judulbuku'],
+            $data['penulis'],
+            $data['tahun_terbit'],
+            $data['kategori'],
+            $data['coverbuku'],
+            $data['status'],
+            $id
+        ]);
+    }
