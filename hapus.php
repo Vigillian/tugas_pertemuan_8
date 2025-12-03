@@ -9,3 +9,13 @@ $data = $repo->getById($id);
 if (!$data) {
     die("Data buku tidak ditemukan.");
 }
+if (isset($_GET['confirm']) && $_GET['confirm'] === 'yes') {
+ $repo->delete($id);
+ // opsional hapus file cover
+    $filePath = "../uploads/" . $data['cover'];
+    if (file_exists($filePath)) {
+        unlink($filePath);
+    }
+    header("Location: index.php");
+    exit;
+}
