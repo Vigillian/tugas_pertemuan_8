@@ -23,3 +23,11 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
             INSERT INTO buku (judul, penulis, tahun_terbit, kategori, cover, status)
             VALUES (?, ?, ?, ?, ?, ?)
         ");
+ $stmt->execute([
+        $judul,
+        $penulis,
+        $tahun,
+        $kategori,
+        $fileName,
+        'tersedia'
+        ]):
