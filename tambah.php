@@ -31,3 +31,9 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         $fileName,
         'tersedia'
         ]);
+     header("Location: index.php");
+        exit;
+    } else {
+        echo "Gagal upload file.";
+        exit;
+    }
