@@ -23,3 +23,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
         if (!in_array($cover['type'], $allowedTypes)) {
         echo "Tipe file tidak valid.";
         exit;
+        if ($cover['size'] > $maxSize) {
+        echo "File terlalu besar.";
+        exit;
+        }
