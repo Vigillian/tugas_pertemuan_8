@@ -9,3 +9,10 @@ $data = $repo->getById($id);
 if (!$data) {
     die("Data buku tidak ditemukan.");
 }
+if ($_SERVER['REQUEST_METHOD'] === 'POST') {
+    $judul = $_POST['judul'];
+    $penulis = $_POST['penulis'];
+    $tahun = $_POST['tahun_terbit'];
+    $kategori = $_POST['kategori'];
+    $status = $_POST['status'];
+    $coverName = $data['cover']; 
