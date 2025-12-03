@@ -50,3 +50,9 @@ public function update(int $id, array $data): bool
             $id
         ]);
     }
+ public function delete(int $id): bool
+    {
+        $stmt = $this->db->prepare("DELETE FROM buku WHERE id = ?");
+        return $stmt->execute([$id]);
+    }
+}
