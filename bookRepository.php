@@ -25,7 +25,7 @@ public function getById(int $id): ?array
             VALUES (?, ?, ?, ?, ?, ?)
         ");
         return $stmt->execute([
-            $data['judulbuku'],
+            $data['judul'],
             $data['penulis'],
             $data['tahun_terbit'],
             $data['kategori'],
@@ -41,7 +41,7 @@ public function update(int $id, array $data): bool
             WHERE id = ?
         ");
         return $stmt->execute([
-            $data['judulbuku'],
+            $data['judul'],
             $data['penulis'],
             $data['tahun_terbit'],
             $data['kategori'],
