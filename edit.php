@@ -16,6 +16,7 @@ if ($_SERVER['REQUEST_METHOD'] === 'POST') {
     $kategori = $_POST['kategori'];
     $status = $_POST['status'];
     $coverName = $data['cover']; 
+}
  if (!empty($_FILES['cover']['name'])) {
         $cover = $_FILES['cover'];
         $allowedTypes = ['image/jpeg', 'image/png'];
