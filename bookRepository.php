@@ -18,3 +18,18 @@ public function getById(int $id): ?array
         $data = $stmt->fetch(PDO::FETCH_ASSOC);
         return $data ?: null;
     }
+ public function create(array $data): bool
+    {
+        $stmt = $this->db->prepare("
+            INSERT INTO buku (judul, penulis, tahun_terbit, kategori, cover, status)
+            VALUES (?, ?, ?, ?, ?, ?)
+        ");
+        return $stmt->execute([
+            $data['judulbuku'],
+            $data['penulis'],
+            $data['tahun_terbit'],
+            $data['kategori'],
+            $data['coverbuku'],
+            $data['status']
+        ]);
+    }
